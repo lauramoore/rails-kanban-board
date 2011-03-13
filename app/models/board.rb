@@ -1,9 +1,13 @@
-class Board < ActiveRecord::Base
+class Board
 	def initialize
-#	    @panels = { 'backlog' => Panel.new('Backlog', :b)}
+	    @panels = { :backlog => Panel.new('Backlog', nil)}
 	end
 	
-#	def get_panel(key)
-#		@panels[key]
-#	end
+	def getPanel(key)
+		@panels[key]
+	end
+	
+	def panels
+		@panels
+	end
 end
