@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110313021309) do
+ActiveRecord::Schema.define(:version => 20110313064001) do
 
   create_table "stories", :force => true do |t|
     t.string   "task"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20110313021309) do
     t.integer  "column_ord"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "state"
   end
 
 end
