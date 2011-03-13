@@ -1,0 +1,31 @@
+<h1>Listing stories</h1>
+
+<table>
+  <tr>
+    <th>Task</th>
+    <th>Notes</th>
+    <th>Need by</th>
+    <th>Delegatee</th>
+    <th>Column ord</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @stories.each do |story| %>
+  <tr>
+    <td><%= story.task %></td>
+    <td><%= story.notes %></td>
+    <td><%= story.need_by %></td>
+    <td><%= story.delegatee %></td>
+    <td><%= story.column_ord %></td>
+    <td><%= link_to 'Show', story %></td>
+    <td><%= link_to 'Edit', edit_story_path(story) %></td>
+    <td><%= link_to 'Destroy', story, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Story', new_story_path %>

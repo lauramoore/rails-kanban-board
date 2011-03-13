@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Task:</b>
+  <%= @story.task %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @story.notes %>
+</p>
+
+<p>
+  <b>Need by:</b>
+  <%= @story.need_by %>
+</p>
+
+<p>
+  <b>Delegatee:</b>
+  <%= @story.delegatee %>
+</p>
+
+<p>
+  <b>Column ord:</b>
+  <%= @story.column_ord %>
+</p>
+
+
+<%= link_to 'Edit', edit_story_path(@story) %> |
+<%= link_to 'Back', stories_path %>
