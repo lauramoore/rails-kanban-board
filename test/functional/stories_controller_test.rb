@@ -2,7 +2,7 @@ require 'test_helper'
 
 class StoriesControllerTest < ActionController::TestCase
   setup do
-    @story = stories(:one)
+    @story = stories(:backlog)
   end
 
   test "should get index" do

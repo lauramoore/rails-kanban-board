@@ -1,15 +1,40 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
+backlog:
   task: MyString
   notes: MyText
   need_by: 2011-03-12
-  delegatee: MyString
+  delegatee:
   column_ord: 1
 
-two:
+priority:
+  task: MyString
+  notes: MyText
+  need_by: 2011-03-12
+  delegatee:
+  column_ord: 1
+  state: P
+
+active:
   task: MyString
   notes: MyText
   need_by: 2011-03-12
   delegatee: MyString
   column_ord: 1
+  state: A
+
+delegated:
+  task: MyString
+  notes: MyText
+  need_by: 2011-03-12
+  delegatee: MyString
+  column_ord: 1
+  state: D
+
+completed:
+  task: MyString
+  notes: MyText
+  need_by: 2011-03-12
+  delegatee: MyString
+  column_ord: 1
+  state: C
