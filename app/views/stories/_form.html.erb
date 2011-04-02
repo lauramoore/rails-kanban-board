@@ -16,6 +16,7 @@
     <%= f.text_field :task %>
   </div>
   <div class="field">
+    <%= select(:story, :state, [['Backlog', 'B'], ['Priority', 'P'], ['Active', 'A'], ['Delegated', 'D'], ['Done', 'C']]) %>
   </div>
   <div class="field">
     <%= f.label :notes %><br />

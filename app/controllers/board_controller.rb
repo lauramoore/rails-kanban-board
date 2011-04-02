@@ -1,6 +1,6 @@
 class BoardController < ApplicationController
   def show
-    @backlog = Story.find :all, :conditions => 'state IS NULL'
+    @backlog = Story.find :all, :conditions => 'state = "B"'
     @priority = Story.find :all,  :conditions => 'state = "P"' 
     @active = Story.find :all,  :conditions => 'state = "A"' 
     @delegated = Story.find :all,  :conditions => 'state = "D"' 
