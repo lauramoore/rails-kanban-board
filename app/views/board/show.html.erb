@@ -1,26 +1,46 @@
-<h1>Board.Backlog</h1>
+<%= link_to 'New Story', new_story_path %>
+<table>
+<tr>
+	<th>Backlog</th>
+	<th>Priority</th>
+	<th>Active</th>
+	<th>Delegated</th>
+	<th>Done</th>
+</tr>
+<tr>
+<td>
 <div class="backlog">
 <ol>
 <%= render(@backlog) %>
 </ol>
 </div>
+</td>
+<td>
 <div class="priority">
 <ol>
 <%= render(@priority) %>
 </ol>
 </div>
+</td>
+<td>
 <div class="active">
 <ol>
 <%= render(@active) %>
 </ol>
 </div>
+</td>
+<td>
 <div class="delegated">
 <ol>
 <%= render(@delegated) %>
 </ol>
 </div>
+</td>
+<td>
 <div class="complete">
 <ol>
 <%= render(@complete) %>
 </ol>
 </div>
+</td>
+</table>
