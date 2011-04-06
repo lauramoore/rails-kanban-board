@@ -10,37 +10,45 @@
 <tr>
 <td>
 <div class="backlog">
-<ol>
+<ul class="sortcol">
 <%= render(@backlog) %>
-</ol>
+</ul>
 </div>
 </td>
 <td>
 <div class="priority">
-<ol>
+<ul class="sortcol">
 <%= render(@priority) %>
-</ol>
+</ul>
 </div>
 </td>
 <td>
 <div class="active">
-<ol>
+<ul class="sortcol">
 <%= render(@active) %>
-</ol>
+</ul>
 </div>
 </td>
 <td>
 <div class="delegated">
-<ol>
+<ul class="sortcol>
 <%= render(@delegated) %>
-</ol>
+</ul>
 </div>
 </td>
 <td>
 <div class="complete">
-<ol>
+<ul>
 <%= render(@complete) %>
-</ol>
+</ul>
 </div>
 </td>
 </table>
+
+<<script>
+	$(function() {
+		alert('jquery enabled')
+		$(".sortcol").sortable();
+		//$( "#sortable" ).disableSelection();
+	});
+</script>
