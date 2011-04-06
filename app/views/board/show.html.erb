@@ -31,14 +31,14 @@
 </td>
 <td>
 <div class="delegated">
-<ul class="sortcol>
+<ul class="sortcol">
 <%= render(@delegated) %>
 </ul>
 </div>
 </td>
 <td>
 <div class="complete">
-<ul>
+<ul class="sortcol">
 <%= render(@complete) %>
 </ul>
 </div>
@@ -48,7 +48,9 @@
 <<script>
 	$(function() {
 		alert('jquery enabled')
-		$(".sortcol").sortable();
+		$(".sortcol").sortable({
+			connectWith: ".sortcol"
+		});
 		//$( "#sortable" ).disableSelection();
 	});
 </script>
