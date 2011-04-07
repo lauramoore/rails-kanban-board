@@ -1,7 +1,6 @@
 RailsKanban::Application.routes.draw do
-  get "board/show"
 
-  resources :stories
+  resources :stories, :board
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

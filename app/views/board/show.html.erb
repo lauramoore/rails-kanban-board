@@ -9,36 +9,36 @@
 </tr>
 <tr>
 <td>
-<div class="backlog">
-<ul class="sortcol">
+<div  class="backlog">
+<ul id="B" class="sortcol">
 <%= render(@backlog) %>
 </ul>
 </div>
 </td>
 <td>
 <div class="priority">
-<ul class="sortcol">
+<ul id="P" class="sortcol">
 <%= render(@priority) %>
 </ul>
 </div>
 </td>
 <td>
-<div class="active">
-<ul class="sortcol">
+<div  class="active">
+<ul id="A" class="sortcol">
 <%= render(@active) %>
 </ul>
 </div>
 </td>
 <td>
 <div class="delegated">
-<ul class="sortcol">
+<ul id="D" class="sortcol">
 <%= render(@delegated) %>
 </ul>
 </div>
 </td>
 <td>
-<div class="complete">
-<ul class="sortcol">
+<div  class="complete">
+<ul id="C" class="sortcol">
 <%= render(@complete) %>
 </ul>
 </div>
@@ -49,7 +49,11 @@
 	$(function() {
 		alert('jquery enabled')
 		$(".sortcol").sortable({
-			connectWith: ".sortcol"
+			connectWith: ".sortcol",
+			receive: function(event, ui) { 
+				$.get('<%= link_to 'board', :action => 'update' %>',  function(data) {alert('Load was performed.')};
+}); 
+			}
 		});
 		//$( "#sortable" ).disableSelection();
 	});

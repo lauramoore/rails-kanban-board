@@ -10,5 +10,9 @@ class BoardController < ApplicationController
       format.xml  { render :xml => @stories }
     end
   end
+  
+  def update
+
+  end
 
 end
