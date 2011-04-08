@@ -5,14 +5,14 @@ backlog:
   notes: MyText
   need_by: 2011-03-12
   delegatee:
-  column_ord: 1
+  column_ord:
 
 priority:
   task: MyString
   notes: MyText
   need_by: 2011-03-12
   delegatee:
-  column_ord: 1
+  column_ord: 2
   state: P
 
 active:
@@ -20,7 +20,7 @@ active:
   notes: MyText
   need_by: 2011-03-12
   delegatee: MyString
-  column_ord: 1
+  column_ord:
   state: A
 
 delegated:
@@ -28,7 +28,7 @@ delegated:
   notes: MyText
   need_by: 2011-03-12
   delegatee: MyString
-  column_ord: 1
+  column_ord:
   state: D
 
 completed:
@@ -36,5 +36,5 @@ completed:
   notes: MyText
   need_by: 2011-03-12
   delegatee: MyString
-  column_ord: 1
+  column_ord:
   state: C
