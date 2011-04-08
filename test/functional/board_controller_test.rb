@@ -12,6 +12,11 @@ class BoardControllerTest < ActionController::TestCase
     assert_select '.story', Story.count
   end
   
- 
+  test "should drop and save" do
+  	  story = stories(:backlog)
+  	  old_status = story.status()
+      put :drop, :id => story.to_param, :status => 'P'
+  end
+
 
 end

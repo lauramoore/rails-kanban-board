@@ -47,14 +47,19 @@
 
 <<script>
 	$(function() {
-		alert('jquery enabled')
+		//alert('jquery enabled')
 		$(".sortcol").sortable({
 			connectWith: ".sortcol",
-			receive: function(event, ui) { 
-				$.get('<%= link_to 'board', :action => 'update' %>',  function(data) {alert('Load was performed.')};
-}); 
-			}
-		});
+			receive: function(event, ui) {
+				//alert("dropped " + ui.item.attr('id') + "in col" + ui.item.parent().attr('id'));
+				$.ajax({ 
+					 url: "<%= drop_url() %>",
+					 type: 'PUT',
+					 data: $.param({id : ui.item.attr('id'), state : ui.item.parent().attr('id')}),  
+					 success: function(d) { ui.item.effect("pulsate", {} , 500 ) } 
+					})//end get
+            } //end receive function 
+		}); //end sortable
 		//$( "#sortable" ).disableSelection();
-	});
+	}); // end function
 </script>

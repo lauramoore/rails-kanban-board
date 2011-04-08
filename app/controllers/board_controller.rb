@@ -10,9 +10,15 @@ class BoardController < ApplicationController
       format.xml  { render :xml => @stories }
     end
   end
-  
-  def update
-
+  def drop
+  	    story = Story.find(params[:id])
+  	    story.state = params[:state]
+    respond_to do |format|
+      if story.save()
+        format.xml  { head :ok }
+      else
+        format.xml  { render :xml => @story.errors, :status => :unprocessable_entity }
+      end
+    end
   end
-
 end
