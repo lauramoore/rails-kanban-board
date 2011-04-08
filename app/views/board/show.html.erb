@@ -11,35 +11,35 @@ a<%= link_to 'New Story', new_story_path %>
 <td>
 <div  class="backlog">
 <ul id="B" class="sortcol">
-<%= render(@backlog) %>
+<%= if @backlog then  render(@backlog) end%>
 </ul>
 </div>
 </td>
 <td>
 <div class="priority">
 <ul id="P" class="sortcol">
-<%= render(@priority) %>
+<%= if @priority then render(@priority) end%>
 </ul>
 </div>
 </td>
 <td>
 <div  class="active">
 <ul id="A" class="sortcol">
-<%= render(@active) %>
+<%= if @active then render(@active) end %>
 </ul>
 </div>
 </td>
 <td>
 <div class="delegated">
 <ul id="D" class="sortcol">
-<%= render(@delegated) %>
+<%= if @delegated then render(@delegated) end%>
 </ul>
 </div>
 </td>
 <td>
 <div  class="complete">
 <ul id="C" class="sortcol">
-<%= render(@complete) %>
+<%= if @complete then render(@complete) end %>
 </ul>
 </div>
 </td>

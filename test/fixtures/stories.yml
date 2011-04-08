@@ -6,6 +6,7 @@ backlog:
   need_by: 2011-03-12
   delegatee:
   column_ord:
+  state: B
 
 priority:
   task: MyString
@@ -15,13 +16,13 @@ priority:
   column_ord: 2
   state: P
 
-active:
+another_backlog:
   task: MyString
   notes: MyText
   need_by: 2011-03-12
   delegatee: MyString
   column_ord:
-  state: A
+  state: B
 
 delegated:
   task: MyString
