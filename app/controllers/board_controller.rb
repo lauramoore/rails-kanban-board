@@ -1,10 +1,10 @@
 class BoardController < ApplicationController
   def show
-    @backlog = Story.find_by_state("P")
+    @backlog = Story.order("column_ord").find_by_state("B")
     @priority = Story.order("column_ord").find_by_state("P") 
-    @active = Story.find_by_state("A")
-    @delegated = Story.find_by_state("D") 
-    @complete = Story.find_by_state("C")
+    @active = Story.order("column_ord").find_by_state("A")
+    @delegated = Story.order("column_ord").find_by_state("D") 
+    @complete = Story.order("column_ord").find_by_state("C")
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @stories }
