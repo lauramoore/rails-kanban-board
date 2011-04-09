@@ -51,12 +51,11 @@ a<%= link_to 'New Story', new_story_path %>
 		//alert('jquery enabled')
 		$(".sortcol").sortable({
 			connectWith: ".sortcol",
-			receive: function(event, ui) {
-				//alert("dropped " + ui.item.attr('id') + "in col" + ui.item.parent().attr('id'));
+			stop: function(event, ui) {
 				$.ajax({ 
 					 url: "<%= drop_url() %>",
 					 type: 'PUT',
-					 data: $.param({id : ui.item.attr('id'), state : ui.item.parent().attr('id')}),  
+					 data: $.param({id : ui.item.attr('id'), state : ui.item.parent().attr('id'), column_ord : ui.offset.top}),  
 					 success: function(d) { ui.item.effect("pulsate", {} , 500 ) } 
 					})//end get
             } //end receive function 
