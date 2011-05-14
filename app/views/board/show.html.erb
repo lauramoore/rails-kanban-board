@@ -1,5 +1,5 @@
 <%= link_to 'New Story', new_story_path %>
-<table>
+<table id="board">
 <tr>
 	<th>Backlog</th>
 	<th>Priority</th>
@@ -8,13 +8,11 @@
 	<th>Done</th>
 </tr>
 <tr>
-<td>
-<div  class="backlog">
+<td class="backlog">
 <ul id="B" class="sortcol">
-<%= if @backlog then  render(@backlog) end%>
-</ul>
-</div>
-</td>
+<%= if @backlog then render(@backlog) end%>
+
+</ul></td>
 <td>
 <div class="priority">
 <ul id="P" class="sortcol">

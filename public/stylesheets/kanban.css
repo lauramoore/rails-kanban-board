@@ -1,0 +1,6 @@
+#board{width:100%}
+#board th{ font-size:1.1em; border:1px solid #98bf21; width:20%; text-align:center }
+#board td{border:1px solid #98bf21; width:20%}
+.sortcol { list-style-type: none; margin: 0; padding: 0; width:100%; }
+.sortcol li {padding: 5px; font-size: 1.2em; height: 1.5em; border:1px solid #98bf21; height:100%}
+.ui-state-highlight { height: 1.5em; line-height: 1.2em; }
