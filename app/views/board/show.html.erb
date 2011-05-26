@@ -10,13 +10,13 @@
 <tr>
 <td class="backlog">
 <ul id="B" class="sortcol">
-<%= if @backlog then render(@backlog) end%>
+<%= if @backlog then render(@backlog) else render('<li>&nbsp;</li>') end%>
 
 </ul></td>
 <td>
 <div class="priority">
 <ul id="P" class="sortcol">
-<%= if @priority then render(@priority) end%>
+<%= if @priority then render(@priority) else render('<li>&nbsp;</li>') end%>
 </ul>
 </div>
 </td>
