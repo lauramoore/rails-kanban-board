@@ -23,21 +23,21 @@
 <td>
 <div  class="active">
 <ul id="A" class="sortcol">
-<%= if @active then render(@active) end %>
+<%= if @active then render(@active) else render('<li>&nbsp;</li>') end %>
 </ul>
 </div>
 </td>
 <td>
 <div class="delegated">
 <ul id="D" class="sortcol">
-<%= if @delegated then render(@delegated) end%>
+<%= if @delegated then render(@delegated) else render('<li>&nbsp;</li>') end%>
 </ul>
 </div>
 </td>
 <td>
 <div  class="complete">
 <ul id="C" class="sortcol">
-<%= if @complete then render(@complete) end %>
+<%= if @complete then render(@complete) else render('<li>&nbsp;</li>') end %>
 </ul>
 </div>
 </td>
@@ -45,19 +45,46 @@
 </table>
 
 <script>
-	$(function() {
-		//alert('jquery enabled')
-		$(".sortcol").sortable({
-			connectWith: ".sortcol",
-			stop: function(event, ui) {
-				$.ajax({ 
-					 url: "<%= drop_url() %>",
-					 type: 'PUT',
-					 data: $.param({id : ui.item.attr('id'), state : ui.item.parent().attr('id'), column_ord : ui.offset.top}),  
-					 success: function(d) { ui.item.effect("pulsate", {} , 500 ) } 
-					})//end get
-            } //end receive function 
-		}); //end sortable
-		//$( "#sortable" ).disableSelection();
-	}); // end function
+function isTouchSupported() {
+return 'ontouchmove' in document.documentElement;
+}
+Ext.setup({
+	onReady : function(){
+		   //alert("on touch supported device " + isTouchSupported());
+
+          Ext.each(Ext.DomQuery.select('.sortcol'),
+                       function(dropel, i) {
+                       new Ext.util.Droppable(dropel, {
+                                   validDropMode: 'contains',
+                                   listeners: {
+                                     drop: function(droppable, draggable, e) {
+                                              draggable.el.highlight("ffff9c", {
+                                                attr: "backgroundColor",
+                                                endColor: "ffffff",
+                                                easing: 'easeIn',
+                                                duration: 1000
+                                              }) //end of highlight method
+                                    } // end drop function
+                                   } //end listeners
+                           }); //end of Droppable
+                         }); // end of each (.sortcol) function
+	
+		Ext.each(Ext.DomQuery.select('.story'), 
+		         function(dragel, i) { 
+		         new Ext.util.Draggable(dragel, { 
+<%
+			#stop: function(event, ui) {
+#			#	$.ajax({ 
+#			#		 url: "<= drop_url() >",
+#			#		 type: 'PUT',
+#			#		 data: $.param({id : ui.item.attr('id'), state : ui.item.parent().attr('id'), column_ord : ui.offset.top}),  
+#			#		 success: function(d) { ui.item.effect("pulsate", {} , 100 ) } 
+#			#		})//end get
+%>
+              }); //end new Draggable 
+            }); // end each (.story) function
+
+
+	} //end onready
+}); // end  setup function
 </script>
